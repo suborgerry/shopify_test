@@ -27,10 +27,35 @@
       ],
       "settings": {
       }
+    },
+    "91cebd0d-950a-4903-ab9a-83d17eddf680": {
+      "type": "featured-products-custom",
+      "blocks": {
+        "9ded5130-3ed8-4973-abe6-f5d0012d8986": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        },
+        "700cb9bd-94fc-4b8a-975b-af15f3fa341a": {
+          "type": "product",
+          "settings": {
+            "product": "the-3p-fulfilled-snowboard"
+          }
+        }
+      },
+      "block_order": [
+        "9ded5130-3ed8-4973-abe6-f5d0012d8986",
+        "700cb9bd-94fc-4b8a-975b-af15f3fa341a"
+      ],
+      "settings": {
+        "heading": "Featured Products"
+      }
     }
   },
   "order": [
     "cart-items",
-    "cart-footer"
+    "cart-footer",
+    "91cebd0d-950a-4903-ab9a-83d17eddf680"
   ]
 }

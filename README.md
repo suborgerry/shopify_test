@@ -1,2 +1,1 @@
-# shopify-ophelia
-# USE - NVM USE 18.2
+# USE NVM 18.2

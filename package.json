@@ -11,7 +11,6 @@
     "dev-init": "cd dev && yarn install",
     "gulp": "cd dev && gulp"
   },
-  "repository": "git@github.com:split-dev/shopify-you-should-be-hair.git",
   "dependencies": {
     "swiper": "^9.1.0"
   }
