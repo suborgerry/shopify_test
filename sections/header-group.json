@@ -18,11 +18,10 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
-    "header": {
-      "type": "header",
+    "header-custom": {
+      "type": "header-custom",
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
@@ -41,6 +40,6 @@
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header-custom"
   ]
 }

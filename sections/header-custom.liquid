@@ -1,0 +1,99 @@
+<style>
+  .navbar {
+    background-color: #f7fafc;
+    padding: 10px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar__item {
+    position: relative;
+    margin-right: 10px;
+  }
+
+  .navbar__link {
+    color: #1a202c;
+    text-decoration: none;
+  }
+
+  .navbar__dropdown {
+    display: none;
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f7fafc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar__dropdown-link:hover {
+    background-color: #bebfc0;
+  }
+
+  .navbar__dropdown-title {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #2d3748;
+  }
+
+  .navbar__dropdown-link {
+    color: #2d3748;
+    text-decoration: none;
+  }
+
+  .navbar__item:hover .navbar__dropdown {
+    display: block;
+  }
+
+  .navbar__dropdown-container-link {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+{% assign menu = section.settings.menu %}
+
+<nav class="navbar">
+  <ul class="navbar__menu">
+    {% for link in menu.links %}
+      <li class="navbar__item">
+        <a class="navbar__link" href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links.size > 0 %}
+          <div class="navbar__dropdown">
+            {% for sublink in link.links %}
+              <div class="navbar__dropdown-title">{{ sublink.title }}</div>
+              {% assign sorted_links = sublink.links | sort: 'title' %}
+              <div class="navbar__dropdown-container-link">
+                {% for subsublink in sorted_links %}
+                  <a class="navbar__dropdown-link" href="{{ subsublink.url }}">{{ subsublink.title }}</a>
+                {% endfor %}
+              </div>
+              <a class="navbar__dropdown-link" href="{{ link.url }}"><i>Shop All</i></a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "Header custom",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    }
+  ]
+}
+{% endschema %}

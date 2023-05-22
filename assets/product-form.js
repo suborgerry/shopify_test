@@ -39,7 +39,7 @@ if (!customElements.get('product-form')) {
         .then((response) => response.json())
         .then((response) => {
           if (response.status) {
-            publish(PUB_SUB_EVENTS.cartError, { source: 'product-form', productVariantId: formData.get('id'), errors: response.description, message: response.message });
+            publish(PUB_SUB_EVENTS.cartError, {source: 'product-form', productVariantId: formData.get('id'), errors: response.description, message: response.message});
             this.handleErrorMessage(response.description);
 
             const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
@@ -54,7 +54,7 @@ if (!customElements.get('product-form')) {
             return;
           }
 
-          if (!this.error) publish(PUB_SUB_EVENTS.cartUpdate, { source: 'product-form', productVariantId: formData.get('id') });
+          if (!this.error) publish(PUB_SUB_EVENTS.cartUpdate, {source: 'product-form', productVariantId: formData.get('id')});
           this.error = false;
           const quickAddModal = this.closest('quick-add-modal');
           if (quickAddModal) {
@@ -92,29 +92,3 @@ if (!customElements.get('product-form')) {
     }
   });
 }
-
-(() => {
-  const featuredProducts = document.querySelector('.featured-products-custom__products');
-  featuredProducts.addEventListener('change', evt => {
-    const element = evt.target;
-    if (element.classList.contains('product-card-custom-variants')) {
-      onchangeSelect(element);
-    }
-  });
-
-  const onchangeSelect = (select) => {
-    const selectedOption = select.selectedOptions[0];
-    const cardForm = select.closest('.product-card-custom-details').querySelector('.form');
-    const mainImage = select.closest('.product-card-custom').querySelector('.product-card-custom-image').querySelector('img');
-    const butonPrice = select.closest('.product-card-custom-details').querySelector('.button-price');
-    const salePoint = select.closest('.product-card-custom-details').querySelector('.product-card-custom-discount');
-
-    cardForm.querySelector('[name="id"]').value = selectedOption.value;
-    mainImage.src = selectedOption.dataset.image;
-    butonPrice.innerHTML = selectedOption.dataset.price;
-
-    if (selectedOption.dataset.sale) {
-      salePoint.innerHTML = selectedOption.dataset.sale;
-    }
-  }
-})();
