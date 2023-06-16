@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="{{ 'product-with-text.css' | asset_url }}">
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --pt: {{ section.settings.padding_top }}px;
+    --pb: {{ section.settings.padding_bottom }}px;
+    --ptm: {{ section.settings.padding_top_mobile }}px;
+    --pbm: {{ section.settings.padding_bottom_mobile }}px;
+    --button-color: {{ section.settings.button_color }};
+    --button-color-hover: {{ section.settings.button_color_hover }};
+  }
+</style>
+
+<h2 class="products-with-text__heading">{{ section.settings.heading }}</h2>
+<div class="products-with-text__description">{{ section.settings.description }}</div>
+<div class="products-with-text__product-list swiper">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      {% render 'product-test',
+        product: block.settings.product,
+        first_tag: block.settings.first_tag,
+        first_second: block.settings.second_tag,
+        text: block.settings.text,
+        color: block.settings.text_bg
+      %}
+    {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+<a class="products-with-text__button" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+
+<script>
+  if (window.outerWidth < 768) {
+    (() => {
+      const customSwiper = document.querySelector('#shopify-section-{{ section.id }}').querySelector('.swiper');
+      const swiper = new Swiper(customSwiper, {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+      });
+    })();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Products with text",
+  "class": "products-with-text test-container",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Description</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url",
+      "default": "/"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#00AFA9"
+    },
+    {
+      "type": "color",
+      "id": "button_color_hover",
+      "label": "Button color hover",
+      "default": "#024946"
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Padding desctop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 132
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 92
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Tags"
+        },
+        {
+          "type": "text",
+          "id": "first_tag",
+          "label": "First tag"
+        },
+        {
+          "type": "text",
+          "id": "second_tag",
+          "label": "Second tag"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "text_bg",
+          "label": "Text background",
+          "default": "#FFF9C0"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products with text",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

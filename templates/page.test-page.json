@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "e2f61e2d-215c-4e83-90a8-387a5381dda7": {
+      "type": "products-with-text",
+      "blocks": {
+        "template--19452244459807__e2f61e2d-215c-4e83-90a8-387a5381dda7-1686901673921d91fe-0": {
+          "type": "product",
+          "settings": {
+            "product": "cloud-nine",
+            "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
+            "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
+            "text": "",
+            "text_bg": "#FFF9C0"
+          }
+        },
+        "d22231ee-e56d-4c0a-a649-5de3f271b014": {
+          "type": "product",
+          "settings": {
+            "product": "heart-minds",
+            "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
+            "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
+            "text": "",
+            "text_bg": "#FFF9C0"
+          }
+        },
+        "5e5a6abc-c1ff-4f40-b60c-fc855b003e63": {
+          "type": "product",
+          "settings": {
+            "product": "immunity",
+            "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
+            "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
+            "text": "",
+            "text_bg": "#FFF9C0"
+          }
+        },
+        "6e85a6eb-1feb-4be9-9aa0-e8f90d1a34a1": {
+          "type": "product",
+          "settings": {
+            "product": "in-the-zone",
+            "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
+            "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
+            "text": "$0.33",
+            "text_bg": "#FFF9C0"
+          }
+        }
+      },
+      "block_order": [
+        "template--19452244459807__e2f61e2d-215c-4e83-90a8-387a5381dda7-1686901673921d91fe-0",
+        "d22231ee-e56d-4c0a-a649-5de3f271b014",
+        "5e5a6abc-c1ff-4f40-b60c-fc855b003e63",
+        "6e85a6eb-1feb-4be9-9aa0-e8f90d1a34a1"
+      ],
+      "settings": {
+        "heading": "Have you had your daily dose of vit today?",
+        "description": "<p>Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.<\/p>",
+        "button_text": "See All Products",
+        "button_url": "shopify:\/\/collections\/all",
+        "button_color": "#00afa9",
+        "button_color_hover": "#024946"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e2f61e2d-215c-4e83-90a8-387a5381dda7"
+  ]
+}

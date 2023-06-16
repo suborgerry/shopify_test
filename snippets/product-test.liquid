@@ -1,0 +1,29 @@
+<a
+  href="{{ product.url }}"
+  class="products-with-text__product swiper-slide"
+  {% if text != empty %}
+    style="--bg-additional-text: {{ color }}"
+  {% endif %}
+>
+  <div
+    class="product-media {% if text %}additional-text{% endif %}"
+  >
+    {% if text != empty %}
+      <p class="product-media__text">
+        {{ text }}
+        <span>/day</span>
+      </p>
+    {% endif %}
+    <img
+      src="{{ product.featured_image | image_url }}"
+      alt="{{ item.image.alt | escape }}"
+      loading="lazy"
+    >
+    <p class="product__tags">
+      <span>{{ first_tag }}</span>
+      <span>{{ first_second }}</span>
+    </p>
+  </div>
+  <h3 class="product__title">{{ product.title }}</h3>
+  <p class="prioduct__price">{{ product.price | money }}</p>
+</a>
