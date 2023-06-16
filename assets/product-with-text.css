@@ -41,15 +41,23 @@
 
 .products-with-text__product-list {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin-top: 50px;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
   .products-with-text__product-list {
     /* padding-bottom: 20px; */
+    flex-direction: row;
     width: 100%;
+    justify-content: center;
+  }
+
+  .products-with-text__product-list .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 46px;
   }
 }
 

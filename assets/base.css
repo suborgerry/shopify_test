@@ -3209,7 +3209,7 @@ details-disclosure > details {
 @media screen and (max-width: 768px) {
   .swiper {
     width: 270px;
-    height: 370px;
+    height: 400px;
   }
 
   .swiper-pagination {
