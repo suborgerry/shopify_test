@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ 'product-with-text.css' | asset_url }}">
+{{ 'product-with-text.css' | asset_url | stylesheet_tag }}
 
 <style>
   #shopify-section-{{ section.id }} {
@@ -32,7 +32,9 @@
 <script>
   if (window.outerWidth < 768) {
     (() => {
-      const customSwiper = document.querySelector('#shopify-section-{{ section.id }}').querySelector('.swiper');
+      const customSwiper = document
+        .querySelector('#shopify-section-{{ section.id }}')
+        .querySelector('.products-with-text__product-list');
       const swiper = new Swiper(customSwiper, {
         loop: true,
         pagination: {

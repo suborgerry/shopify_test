@@ -18,7 +18,7 @@
             "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
             "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
             "text": "",
-            "text_bg": "#FFF9C0"
+            "text_bg": "#fff9c0"
           }
         },
         "d22231ee-e56d-4c0a-a649-5de3f271b014": {
@@ -28,7 +28,7 @@
             "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
             "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
             "text": "",
-            "text_bg": "#FFF9C0"
+            "text_bg": "#fff9c0"
           }
         },
         "5e5a6abc-c1ff-4f40-b60c-fc855b003e63": {
@@ -38,7 +38,7 @@
             "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
             "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
             "text": "",
-            "text_bg": "#FFF9C0"
+            "text_bg": "#fff9c0"
           }
         },
         "6e85a6eb-1feb-4be9-9aa0-e8f90d1a34a1": {
@@ -48,7 +48,7 @@
             "first_tag": "{{ block.settings.product.metafields.tags.first.value }}",
             "second_tag": "{{ block.settings.product.metafields.custom.second_tag.value }}",
             "text": "$0.33",
-            "text_bg": "#FFF9C0"
+            "text_bg": "#fff9c0"
           }
         }
       },
@@ -64,12 +64,76 @@
         "button_text": "See All Products",
         "button_url": "shopify:\/\/collections\/all",
         "button_color": "#00afa9",
-        "button_color_hover": "#024946"
+        "button_color_hover": "#024946",
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 50,
+        "padding_top": 132,
+        "padding_bottom": 92
+      }
+    },
+    "a9c1c964-5596-4996-9add-f315d8c9e69f": {
+      "type": "custom-reviews",
+      "blocks": {
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_37.png",
+            "rating": 4,
+            "heading": "Walking on Sunshine",
+            "description": "<p>“These little softgels have helped boost my mood and keep me in a positive head space during all the chaos of everyone coming back to work since covid. I suffer from anxiety and depression and this has helped”<\/p>",
+            "name": "Amber",
+            "bg_color_review": "#dffffd",
+            "product": "immunity",
+            "bg_color_product": "#00afa9",
+            "bg_color_product_hover": "#037874"
+          }
+        },
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-1": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_37_1.png",
+            "rating": 4.5,
+            "heading": "Complete one Eighty in the Mood Department",
+            "description": "<p>“I’ve been one to get frustrated easily while dealing with stressful situations, either while working or with people. But I got annoyed with feeling this way, so I decided to look online and see what  I could find. Came across these and ...”<\/p>",
+            "name": "Aicia",
+            "bg_color_review": "#dffffd",
+            "product": "cloud-nine",
+            "bg_color_product": "#00afa9",
+            "bg_color_product_hover": "#037874"
+          }
+        },
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-2": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_37_2.png",
+            "rating": 5,
+            "heading": "Love this!!!",
+            "description": "<p>“I love this vitamin, it is so tiny but packs a major punch! This has helped massively with my anxiety and has helped boost me up a little too!”<\/p>",
+            "name": "Amber",
+            "bg_color_review": "#dffffd",
+            "product": "heart-minds",
+            "bg_color_product": "#00afa9",
+            "bg_color_product_hover": "#037874"
+          }
+        }
+      },
+      "block_order": [
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-0",
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-1",
+        "template--19452244459807__a9c1c964-5596-4996-9add-f315d8c9e69f-168725482755679482-2"
+      ],
+      "settings": {
+        "heading": "Why People Love Us",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 205
       }
     }
   },
   "order": [
     "main",
-    "e2f61e2d-215c-4e83-90a8-387a5381dda7"
+    "e2f61e2d-215c-4e83-90a8-387a5381dda7",
+    "a9c1c964-5596-4996-9add-f315d8c9e69f"
   ]
 }

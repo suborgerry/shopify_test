@@ -3198,7 +3198,7 @@ details-disclosure > details {
 @media screen and (min-width: 1300px) {
   .test-container {
     padding: 0;
-    max-width: 1258px;
+    max-width: 1259px;
   }
 }
 
@@ -3207,11 +3207,6 @@ details-disclosure > details {
 }
 
 @media screen and (max-width: 768px) {
-  .swiper {
-    width: 270px;
-    height: 400px;
-  }
-
   .swiper-pagination {
     display: block;
   }
@@ -3231,10 +3226,15 @@ details-disclosure > details {
     height: 10px;
   }
 
-  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
     border: none;
     background: #00afa9;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    border: 1px solid #363636;
+    background: transparent;
+    opacity: 1;
   }
 }

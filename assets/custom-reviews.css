@@ -1,0 +1,224 @@
+.custom-reviews {
+  position: relative;
+}
+
+.custom-reviews__title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 124%;
+  margin: 0;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-reviews__title {
+    font-size: 34px;
+    margin-bottom: 130px;
+  }
+}
+
+.custom-reviews__container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-reviews__container {
+    display: flex;
+    column-gap: 59px;
+    row-gap: 150px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-reviews__container {
+    width: 335px;
+    height: 624px;
+    padding-top: 50px;
+  }
+}
+
+.custom-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 335px;
+  background-color: var(--bg);
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-review > div {
+    padding: 0 20px;
+  }
+}
+
+.custom-review > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review {
+    width: calc(100% / 3);
+    max-width: 380px;
+    height: 600px;
+    padding: 0 20px;
+  }
+}
+
+.custom-review__image {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review__image {
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+  }
+}
+
+.custom-review__rating {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review__rating {
+    margin-top: 25px;
+  }
+}
+
+.custom-review__rating .rating-star {
+  --color-icon: #00afa9;
+}
+
+.custom-review__rating .rating-star::before {
+  font-size: 35px;
+}
+
+.custom-review__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  text-align: center;
+  margin: 15px 0 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review__title {
+    margin: 25px 0 15px;
+  }
+}
+
+.custom-review__description p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 158%;
+  text-align: center;
+  margin: 0;
+}
+
+.custom-review__name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 125%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review__name {
+    font-size: 20px;
+  }
+}
+
+.custom-review__product {
+  height: 100px;
+  background-color: var(--bg-product);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  border-radius: 0px 0px 15px 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+.custom-review__product::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.7071 8.70711C23.0976 8.31658 23.0976 7.68342 22.7071 7.29289L16.3431 0.928932C15.9526 0.538408 15.3195 0.538408 14.9289 0.928932C14.5384 1.31946 14.5384 1.95262 14.9289 2.34315L20.5858 8L14.9289 13.6569C14.5384 14.0474 14.5384 14.6805 14.9289 15.0711C15.3195 15.4616 15.9526 15.4616 16.3431 15.0711L22.7071 8.70711ZM0 9H22V7H0V9Z' fill='white'/%3E%3C/svg%3E%0A");
+  width: 23px;
+  height: 16px;
+  position: absolute;
+  right: 19px;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-review__product {
+    width: calc(100% + 40px);
+    padding: 15px 19px 15px 20px;
+  }
+}
+
+.custom-review__product:hover {
+  background-color: var(--bg-product-hover);
+}
+
+.custom-review__product img {
+  height: 100%;
+}
+
+.custom-review__product-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  text-decoration: none;
+  max-width: 150px;
+}
+
+.custom-reviews_button {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-button-prev.custom-reviews_button {
+    left: 40px;
+  }
+  .swiper-button-next.custom-reviews_button {
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .swiper-button-prev.custom-reviews_button {
+    left: 5px;
+  }
+
+  .swiper-button-next.custom-reviews_button {
+    right: 5px;
+  }
+}
+
+.custom-reviews_button::after {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-reviews_button {
+    display: none;
+  }
+}

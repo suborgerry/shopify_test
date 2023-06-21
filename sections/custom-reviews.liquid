@@ -1,0 +1,234 @@
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'custom-reviews.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --pt: {{ section.settings.padding_top }}px;
+    --pb: {{ section.settings.padding_bottom }}px;
+    --ptm: {{ section.settings.padding_top_mobile }}px;
+    --pbm: {{ section.settings.padding_bottom_mobile }}px;
+  }
+</style>
+
+<h2 class="custom-reviews__title">{{ section.settings.heading }}</h2>
+<div class="swiper-button-prev custom-reviews_button">
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d_2_188)">
+    <circle cx="20" cy="20" r="15" fill="white"/>
+    </g>
+    <path d="M13.846 19.4233C13.846 19.7335 13.9615 20.0437 14.1918 20.2802L21.4449 27.7221C21.9063 28.1955 22.6543 28.1955 23.1155 27.7221C23.5767 27.2489 23.5767 26.4815 23.1155 26.008L16.6976 19.4233L23.1153 12.8386C23.5765 12.3652 23.5765 11.5979 23.1153 11.1247C22.6541 10.651 21.9061 10.651 21.4447 11.1247L14.1916 18.5665C13.9612 18.8031 13.846 19.1133 13.846 19.4233Z" fill="#00AFA9"/>
+    <defs>
+    <filter id="filter0_d_2_188" x="0" y="0" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="2.5"/>
+    <feComposite in2="hardAlpha" operator="out"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.13 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_188"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_188" result="shape"/>
+    </filter>
+    </defs>
+  </svg>
+</div>
+<div class="custom-reviews__container product swiper">
+  <div class="swiper-wrapper">
+    {% for review in section.blocks %}
+      {% render 'review-card', review: review.settings %}
+    {% endfor %}
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+<div class="swiper-button-next custom-reviews_button">
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d_2_192)">
+    <circle cx="15" cy="15" r="15" transform="matrix(-1 0 0 1 35 5)" fill="white"/>
+    </g>
+    <path d="M26.154 19.4233C26.154 19.7335 26.0385 20.0437 25.8082 20.2802L18.5551 27.7221C18.0937 28.1955 17.3457 28.1955 16.8845 27.7221C16.4233 27.2489 16.4233 26.4815 16.8845 26.008L23.3024 19.4233L16.8847 12.8386C16.4235 12.3652 16.4235 11.5979 16.8847 11.1247C17.3459 10.651 18.0939 10.651 18.5553 11.1247L25.8084 18.5665C26.0388 18.8031 26.154 19.1133 26.154 19.4233Z" fill="#00AFA9"/>
+    <defs>
+    <filter id="filter0_d_2_192" x="0" y="0" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="2.5"/>
+    <feComposite in2="hardAlpha" operator="out"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.13 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_192"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_192" result="shape"/>
+    </filter>
+    </defs>
+  </svg>
+</div>
+
+<script>
+  if (window.outerWidth < 768) {
+    (() => {
+      const customSwiper = document
+        .querySelector('#shopify-section-{{ section.id }}')
+        .querySelector('.custom-reviews__container');
+      const swiper = new Swiper(customSwiper, {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    })();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Custom reviews",
+  "class": "custom-reviews test-container",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding desctop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 205
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Review info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "unit": "⭐",
+          "label": "Revirew rating",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Review heading",
+          "default": "Review heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Description</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer`s name"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_review",
+          "label": "Background color review",
+          "default": "#00AFA9"
+        },
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "The product to which the review relates"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_product",
+          "label": "Background color",
+          "default": "#00AFA9"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_product_hover",
+          "label": "Background color hover",
+          "default": "#037874"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom reviews",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

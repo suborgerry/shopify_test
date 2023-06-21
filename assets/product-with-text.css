@@ -99,6 +99,11 @@
   .product-media.additional-text {
     padding-top: 20px;
   }
+
+  .products-with-text__product-list {
+    width: 270px;
+    height: 400px;
+  }
 }
 
 .products-with-text__product img {
